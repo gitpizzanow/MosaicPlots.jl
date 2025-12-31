@@ -1,6 +1,6 @@
 module MosaicPlots
 
-using Plots
+using StatsPlots
 
 export mosaicplot
 
