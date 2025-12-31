@@ -16,7 +16,7 @@ Create a stacked bar plot from a matrix M.
 - `title`: Plot title (default: "Mosaic Plot")
 - `ylabel`: Y-axis label (default: "Count")
 - `colors`: Color scheme (default: [:blue, :orange, :green])
-- `size`: Plot size (default: (600, 400))
+- `plotsize`: Plot size (default: (600, 400))
 - Additional kwargs are passed to groupedbar
 
 # Examples
@@ -37,10 +37,10 @@ function mosaicplot(M::Matrix;
                    title="Mosaic Plot",
                    ylabel="Count",
                    colors=[:blue, :orange, :green],
-                   size=(600, 400),
+                   plotsize=(600, 400),
                    kwargs...)
     
-    nrows, ncols = size(M)
+    nrows, ncols = Base.size(M)
     
     # Default labels if not provided
     if isnothing(row_labels)
@@ -60,7 +60,7 @@ function mosaicplot(M::Matrix;
                    title=title,
                    legend=:topright,
                    color=colors[1:nrows],
-                   size=size;
+                   size=plotsize;
                    kwargs...)
     
     return p
