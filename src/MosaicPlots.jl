@@ -59,7 +59,7 @@ function mosaicplot(M::Matrix;
                    ylabel=ylabel,
                    title=title,
                    legend=:topright,
-                   color=colors[1:nrows],
+                   color=reshape(colors[1:nrows], 1, :),
                    size=plotsize;
                    kwargs...)
     
